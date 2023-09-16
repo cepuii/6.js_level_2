@@ -3,13 +3,13 @@
 const arr = [90, 124, 55, 9213, 159, 225, 1543, 1545];
 const devideArr = [];
 
-for(let i = 0; i < arr.length; i++) {
+for(let i of arr) {
 
-    if(arr[i] % 3 === 0) {
-        devideArr.push(arr[i]);
+    if(i % 3 === 0) {
+        devideArr.push(i);
     }
 }
-
+console.log(devideArr)
 //  2. Посчитайте финальную стоимость всех продуктов в корзине и выведите результат как переменную в консоль лог
 
 const shoppingCart = [
@@ -40,8 +40,8 @@ const shoppingCart = [
 ];
 
 let sum = 0;
-for(let i = 0; i < shoppingCart.length; i++){
-    sum += shoppingCart[i].count * shoppingCart[i].pricePerItem;
+for(let i of shoppingCart){
+    sum += i.count * i.pricePerItem;
 }
 console.log(`Total: ${sum}`)
 
@@ -57,9 +57,9 @@ const arrs = [
 ]
 
 let sumArr = 0;
-for(let i = 0; i < arrs.length; i++){
-    for(let j = 0; j < arrs[i].length; j++){
-        sumArr += arrs[i][j];
+for(let i of arrs){
+    for(let j of i){
+        sumArr += j;
     }
 }
 console.log(`Arrays' elements sum: ${sumArr}`)
@@ -71,9 +71,9 @@ const arrString = ["php", "php", "css", "css",
 ];
 const uniqueArray = []
 
-for(let i = 0; i < arrString.length; i++){
-    if(!uniqueArray.includes(arrString[i])){
-        uniqueArray.push(arrString[i])
+for(let i of arrString){
+    if(!uniqueArray.includes(i)){
+        uniqueArray.push(i)
     }
 }
 console.log(`Unique strings: ${uniqueArray}`)
@@ -83,7 +83,7 @@ console.log(`Unique strings: ${uniqueArray}`)
 const names = ['Jane','Bob','Bob','Luci','Jane','Bob','Peter','Felix','Felix','Bob','Andrew'];
 const result = {};
 
-for(let i = 0; i < names.length; i++){
-    result[names[i]] = result[names[i]] === undefined ? 1 : result[names[i]] + 1;
+for(let i of names){
+    result[i] = result[i] === undefined ? 1 : result[i] + 1;
 }
 console.log(result);
